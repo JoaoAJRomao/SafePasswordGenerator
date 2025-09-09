@@ -1,0 +1,2 @@
+# SafePasswordGenerator
+Generate passwords

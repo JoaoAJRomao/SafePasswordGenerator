@@ -20,7 +20,7 @@ export default function Home() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        minHeight: "100vh", // full viewport height
+        minHeight: "100vh"
       }}
     >
       Generate a password by clicking the button below

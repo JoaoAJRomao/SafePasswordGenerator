@@ -12,7 +12,7 @@ export default function Home() {
   const [lowercase, setLowercase] = React.useState(true);
   const [numbers, setNumbers] = React.useState(true);
   const [symbols, setSymbols] = React.useState(true);
-  
+
   return (
     <div
       style={{
@@ -24,9 +24,17 @@ export default function Home() {
       }}
     >
       Generate a password by clicking the button below
-      <Card style={{ width: 300, }}>
-        <p>{pwd}</p>
-        <CopyOutlined />
+      <Card style={{ width: 300 }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <p>{pwd}</p>
+          <CopyOutlined
+            style={{ fontSize: 20, cursor: "pointer", marginLeft: 8 }}
+            onClick={() => {
+              navigator.clipboard.writeText(pwd);
+            }}
+            title="Copy password"
+          />
+        </div>
       </Card>
       <Button
         type="primary"

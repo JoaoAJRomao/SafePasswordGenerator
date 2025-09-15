@@ -34,3 +34,20 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## About this project
+
+This project is part of a personal study on software development. In this project, I have to:
+
+1. Generate a password
+2. Allow user to use capital letters
+3. Allow user to use lower case letters
+4. Allow user to use symbols
+5. Allow user to use numbers and
+6. Allow the user to define a character range (12 to 27)
+
+Was fun to try this, because never used Next.js before.
+
+Current using client side because was how I learned to use React and...  don't know how to use server side yet.
+
+Planing to use the server side in another project and learning more.

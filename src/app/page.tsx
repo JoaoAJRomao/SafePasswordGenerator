@@ -41,16 +41,18 @@ export default function Home() {
         </Card>
 
         <div style={pwdLengthStyle}>
-          Character length:
-          <Slider
-            defaultValue={16}
-            min={12}
-            max={27}
-            style={{ width: 200 }}
-            onChange={setPwdLength}
-            tooltip={{ formatter: null }}
-          />
-          {pwdLength} to 27
+          <span>Character length:</span>
+          <div style={divSliderStyle}>
+            <Slider
+              defaultValue={16}
+              min={12}
+              max={27}
+              style={{ width: '100%' }}
+              onChange={setPwdLength}
+              tooltip={{ formatter: null }}
+            />
+          </div>
+          <span>{pwdLength} to 27</span>
         </div>
 
         <Row style={checkboxStyle}>
@@ -118,6 +120,7 @@ const cardContainerStyle: React.CSSProperties = {
   backgroundColor: "#e6e6e6ff",
   padding: 20,
   borderRadius: 10,
+  minWidth: 340,
 };
 const titleStyle: React.CSSProperties = { marginTop: 5, color: "black" };
 const cardTitleStyle: React.CSSProperties = {
@@ -173,6 +176,7 @@ const pwdLengthStyle: React.CSSProperties = {
   alignItems: "center",
   gap: 10,
 };
+const divSliderStyle: React.CSSProperties = { flex: 1, paddingRight: 10 };
 const checkboxStyle: React.CSSProperties = {
   flexDirection: "column",
   display: "flex",

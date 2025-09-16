@@ -7,7 +7,7 @@ import { CopyOutlined } from "@ant-design/icons";
 export default function Home() {
 
   const [pwd, setPwd] = React.useState("Generate a password");
-  const [pwdLength, setPwdLength] = React.useState(12);
+  const [pwdLength, setPwdLength] = React.useState(16);
   const [capital, setCapital] = React.useState(true);
   const [lowercase, setLowercase] = React.useState(true);
   const [numbers, setNumbers] = React.useState(true);

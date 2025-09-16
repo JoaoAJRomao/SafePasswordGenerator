@@ -120,7 +120,8 @@ const cardContainerStyle: React.CSSProperties = {
   backgroundColor: "#e6e6e6ff",
   padding: 20,
   borderRadius: 10,
-  minWidth: 340,
+  minWidth: 450,
+  maxWidth: 600,
 };
 const titleStyle: React.CSSProperties = { marginTop: 5, color: "black" };
 const cardTitleStyle: React.CSSProperties = {

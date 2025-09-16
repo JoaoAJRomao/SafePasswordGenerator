@@ -13,8 +13,6 @@ export default function Home() {
   const [numbers, setNumbers] = React.useState(true);
   const [symbols, setSymbols] = React.useState(true);
 
-
-
   return (
     <div style={containerStyle} >
       <h2 style={titleStyle}>Generate a password by clicking the button</h2>
@@ -82,4 +80,4 @@ const btnGenerateStyle: React.CSSProperties = { marginBottom: 10 };
 const iconStyle: React.CSSProperties = { fontSize: 20, cursor: "pointer", marginLeft: 8 };
 const greenLight: React.CSSProperties = { backgroundColor: "green", borderColor: "green", color: "white" };
 const redLight: React.CSSProperties = { backgroundColor: "red", borderColor: "red", color: "white" };
-const pwdLengthStyle: React.CSSProperties = {border: "2px solid white" , borderRadius: 5, borderWidth: 1, padding: 10};
+const pwdLengthStyle: React.CSSProperties = { border: "2px solid white", borderRadius: 5, borderWidth: 1, padding: 10 };

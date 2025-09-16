@@ -1,9 +1,10 @@
 "use client";
-import { Button, Card, Slider } from "antd";
+import { Button, Card, Row, Slider } from "antd";
 import { generatePassword } from "@/utilities/generatePassword";
 import React from "react";
 import { CopyOutlined } from "@ant-design/icons";
 import { SiNextdotjs } from "react-icons/si";
+import { Checkbox } from "antd";
 
 export default function Home() {
   const [pwd, setPwd] = React.useState("Generate a password");
@@ -39,44 +40,45 @@ export default function Home() {
           </div>
         </Card>
 
-        <div>
-          <Button
-            onClick={() => setCapital(!capital)}
-            style={capital ? greenLight : redLight}
-          >
-            Include capital letters?
-          </Button>
-          <Button
-            onClick={() => setLowercase(!lowercase)}
-            style={lowercase ? greenLight : redLight}
-          >
-            Include lowercase letters?
-          </Button>
-        </div>
-        <div style={{ marginTop: 10, marginBottom: 10 }}>
-          <Button
-            onClick={() => setNumbers(!numbers)}
-            style={numbers ? greenLight : redLight}
-          >
-            Include numbers?
-          </Button>
-          <Button
-            onClick={() => setSymbols(!symbols)}
-            style={symbols ? greenLight : redLight}
-          >
-            Include symbols?
-          </Button>
-        </div>
-        <div className="margin-top" style={pwdLengthStyle}>
-          Password length:
+        <div style={pwdLengthStyle}>
+          Character length:
           <Slider
             defaultValue={16}
             min={12}
             max={27}
             style={{ width: 200 }}
             onChange={setPwdLength}
+            tooltip={{ formatter: null }}
           />
+          {pwdLength} to 27
         </div>
+
+        <Row style={checkboxStyle}>
+          <Checkbox
+            checked={capital}
+            onChange={(e) => setCapital(e.target.checked)}
+          >
+            Capital letters
+          </Checkbox>
+          <Checkbox
+            checked={lowercase}
+            onChange={(e) => setLowercase(e.target.checked)}
+          >
+            Lowercase letters
+          </Checkbox>
+          <Checkbox
+            checked={numbers}
+            onChange={(e) => setNumbers(e.target.checked)}
+          >
+            Numbers
+          </Checkbox>
+          <Checkbox
+            checked={symbols}
+            onChange={(e) => setSymbols(e.target.checked)}
+          >
+            Symbols
+          </Checkbox>
+        </Row>
 
         <Button
           type="primary"
@@ -99,7 +101,6 @@ export default function Home() {
           Generate password
         </Button>
       </div>
-
     </div>
   );
 }
@@ -149,25 +150,32 @@ const pwdStyle: React.CSSProperties = {
   alignItems: "center",
   justifyContent: "space-between",
 };
-const btnGeneratePwdStyle: React.CSSProperties = { marginBottom: 10, width: "100%", height: 50, fontSize: 20 };
+const btnGeneratePwdStyle: React.CSSProperties = {
+  marginBottom: 10,
+  width: "100%",
+  height: 50,
+  fontSize: 20,
+};
 const iconStyle: React.CSSProperties = {
   fontSize: 20,
   cursor: "pointer",
   marginLeft: 8,
 };
-const greenLight: React.CSSProperties = {
-  backgroundColor: "green",
-  borderColor: "green",
-  color: "white",
-};
-const redLight: React.CSSProperties = {
-  backgroundColor: "red",
-  borderColor: "red",
-  color: "white",
-};
 const pwdLengthStyle: React.CSSProperties = {
-  border: "2px solid white",
+  border: "2px solid black",
   borderRadius: 5,
   borderWidth: 1,
   padding: 10,
+  marginBottom: 20,
+  color: "black",
+  flexDirection: "row",
+  display: "flex",
+  alignItems: "center",
+  gap: 10,
+};
+const checkboxStyle: React.CSSProperties = {
+  flexDirection: "column",
+  display: "flex",
+  gap: 8,
+  marginBottom: 30,
 };
